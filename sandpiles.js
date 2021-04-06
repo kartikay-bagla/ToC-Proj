@@ -7,11 +7,14 @@ let COLORS = [
     [200, 184, 219]
 ];
 
-let arr1 = new Array(width).fill().map(i => new Array(height).fill(0));
-let arr2 = new Array(width).fill().map(i => new Array(height).fill(0));
+let HEIGHT = 200;
+let WIDTH = 200;
+
+let arr1 = new Array(WIDTH).fill().map(i => new Array(HEIGHT).fill(0));
+let arr2 = new Array(WIDTH).fill().map(i => new Array(HEIGHT).fill(0));
 
 function setup() {
-    createCanvas(200, 200);
+    createCanvas(WIDTH, HEIGHT);
     pixelDensity(1);
 
     arr1[75][75] = 10000;
@@ -30,7 +33,7 @@ function mouseDragged() {
     arr1[mouseX][mouseY] = 100;
 }
 
-function copy(arr1, arr2) {
+function copyarr(arr1, arr2) {
     for (let x = 0; x < width; x++) {
         for (let y = 0; y < height; y++) {
             arr2[x][y] = arr1[x][y];
@@ -46,7 +49,7 @@ function swap() {
 
 function topple() {
     
-    copy(arr1, arr2);
+    copyarr(arr1, arr2);
 
     for (let x = 0; x < width; x++) {
         for (let y = 0; y < height; y++) {
