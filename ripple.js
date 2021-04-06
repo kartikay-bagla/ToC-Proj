@@ -1,4 +1,4 @@
-let DAMPING = 0.99;
+let DAMPING = 0.98;
 
 let WIDTH = 400;
 let HEIGHT = 400;
@@ -12,6 +12,12 @@ let arr2 = new Array(cols).fill(0).map(n => new Array(rows).fill(0));
 function setup() {
     pixelDensity(1);
     createCanvas(WIDTH, HEIGHT);
+
+    document.getElementById("damping").value = DAMPING;
+}
+
+function changeDamping() {
+    DAMPING = document.getElementById("damping").value;
 }
 
 function update_cells() {
